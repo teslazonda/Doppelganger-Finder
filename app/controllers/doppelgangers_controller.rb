@@ -2,7 +2,7 @@ class DoppelgangersController < ApplicationController
   before_action :set_restaurant, only: :show
 
   def index
-    @restaurants = Restaurants.all
+    @doppelgangers = Doppelganger.all
   end
 
   def new
