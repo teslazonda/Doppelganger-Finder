@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :doppelganger, only: %i[index new create show] do
     resources :booking, only: %i[new create]
   end
-  resources :booking, only: %w[update]
+  resources :booking, only: %i[update]
 end
