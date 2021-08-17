@@ -1,2 +1,14 @@
-<h1>Doppelgangers#index</h1>
-<p>Find me in app/views/doppelgangers/index.html.erb</p>
+
+<div>
+  <%= "#{params[:name]} in #{params[:location]} | #{params[:booking_start]} TO #{params[:booking_end]}" %>
+</div>
+
+<% @doppelgangers.each do |doppelganger| %>
+  <%= "#{doppelganger.name} located in #{params[:location]}" %>
+  <%= doppelganger.description %>
+  <%= "¥#{doppelganger.price} / hour" %>
+  <%= "¥#{params[:booking_end] - params[:booking_start]} total" %>
+  <%= link_to '', doppelganger_path(doppelganger) %>
+<% end %>
+
+<%#= @url I was told since we will see this tomorrow I should skip the map for now. %>
