@@ -1,16 +1,15 @@
 Rails.application.routes.draw do
+  namespace :owner do
+    get 'bookings/index'
+  end
   devise_for :users
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/update'
-  get 'doppelgangers/index'
-  get 'doppelgangers/new'
-  get 'doppelgangers/create'
-  get 'doppelgangers/show'
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :doppelganger, only: %i[index new create show] do
-    resources :booking, only: %i[new create]
+  resources :doppelgangers, only: %i[index new create show] do
+    resources :bookings, only: %i[new create]
   end
-  resources :booking, only: %i[update]
+  resources :bookings, only: %i[index update]
+  namespace :owner do
+    resources :bookings, only: [:index]
+  end
 end
