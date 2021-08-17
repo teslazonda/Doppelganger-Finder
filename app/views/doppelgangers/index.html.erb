@@ -5,12 +5,6 @@
 
 <% @doppelgangers.each do |doppelganger| %>
 
-  <%= "#{doppelganger.name} located in #{params[:location]}" %>
-  <%= doppelganger.description %>
-  <%#= "¥#{doppelganger.price} / hour" %>
-  <%= "¥#{params[:booking_end] - params[:booking_start]} total" %>
-  <%= link_to '', doppelganger_path(doppelganger) %>
-
 <%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
 
 <% end %>
