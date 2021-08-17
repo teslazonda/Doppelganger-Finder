@@ -18,9 +18,9 @@ class BookingsController < ApplicationController
     @booking.doppelganger = @doppelganger
     authorize @booking
     if @booking.save
-      redirect_to doppelganger_path(@doppelganger)
+      redirect_to bookings_path
     else
-      render :new
+      render 'doppelgangers/show'
     end
   end
 
@@ -38,6 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:name, :description, :price)
+    params.require(:booking).permit(:start_time, :end_time, :location)
   end
 end
