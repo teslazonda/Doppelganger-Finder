@@ -2,13 +2,23 @@ puts 'Cleaning the DB'
 Doppelganger.destroy_all
 puts 'DB is clean'
 
+puts "Destroying user"
+User.destroy_all
+puts "Creating user"
+@user = User.new(
+  password: "123456",
+  email: "something@gmail.com",
+  first_name: "Kevin"
+)
+
 puts 'Creating new Doppelgangers from Breaking Bad'
 5.times do
-  @doppelganger = Doppelganger.create(
+  Doppelganger.create!(
     name: Faker::TvShows::BreakingBad.character,
     description: Faker::Lorem.sentence(word_count: 10),
     price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-    photo_url: "Faker::LoremFlickr.image(size: '500x600', search_terms: ['#{@doppelganger.name.split[0]}', '#{@doppelganger.name.split[1]}'], match_all: true)"
+    user_id: @user.user_id
+    # photo_url: "Faker::LoremFlickr.image(size: '500x600', search_terms: ['#{@doppelganger.name.split[0]}', '#{@doppelganger.name.split[1]}'], match_all: true)"
   )
 end
 puts 'Breaking Bad characters created'

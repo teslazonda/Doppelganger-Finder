@@ -1,6 +1,6 @@
 
 <div>
-  <%=  %>
+  <%= "#{params[:name]} in #{params[:location]} | #{params[:booking_start]} TO #{params[:booking_end]}" %>
 </div>
 
 <% @doppelgangers.each do |doppelganger| %>
@@ -8,4 +8,7 @@
   <%= doppelganger.description %>
   <%= "¥#{doppelganger.price} / hour" %>
   <%= "¥#{params[:booking_end] - params[:booking_start]} total" %>
+  <%= link_to '', doppelganger_path(doppelganger) %>
 <% end %>
+
+<%= @url %>
