@@ -12,8 +12,13 @@
   </head>
 
   <body>
+  <%= render 'shared/navbar' %>
+   <%= render 'shared/flashes' %>
     <%= yield %>
+
     <button class="gradient-button-lg">Button lg</button>
     <button class="gradient-button-md"> Button md</button>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
