@@ -1,8 +1,10 @@
 class DoppelgangersController < ApplicationController
   before_action :set_restaurant, only: :show
 
+
   def index
-    @doppelgangers = Doppelganger.all
+    # @doppelgangers = Doppelganger.all
+    @doppelgangers = policy_scope(Doppelgangers).order(created_at: :desc)
   end
 
   def new
@@ -11,6 +13,7 @@ class DoppelgangersController < ApplicationController
 
   def create
     @doppelganger = Doppelganger.new(doppelganger_params)
+    authorize @doppelganger
     if @doppelganger.save
       redirect_to doppelganger_path(@doppelganger)
     else
