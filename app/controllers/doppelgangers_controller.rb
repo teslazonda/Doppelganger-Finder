@@ -1,5 +1,6 @@
 class DoppelgangersController < ApplicationController
-  before_action :set_restaurant, only: :show
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_doppelganger, only: :show
 
 
   def index
@@ -14,6 +15,7 @@ class DoppelgangersController < ApplicationController
 
   def new
     @doppelganger = Doppelganger.new
+    authorize @doppelganger
   end
 
   def create
@@ -30,8 +32,9 @@ class DoppelgangersController < ApplicationController
 
   private
 
-  def set_doppelgangers
+  def set_doppelganger
     @doppelganger = Doppelganger.find(params[:id])
+    authorize @doppelganger
   end
 
   def doppelganger_params
