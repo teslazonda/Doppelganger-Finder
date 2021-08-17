@@ -1,2 +1,11 @@
-<h1>Doppelgangers#index</h1>
-<p>Find me in app/views/doppelgangers/index.html.erb</p>
+
+<div>
+  <%=  %>
+</div>
+
+<% @doppelgangers.each do |doppelganger| %>
+  <%= "#{doppelganger.name} located in #{params[:location]}" %>
+  <%= doppelganger.description %>
+  <%= "¥#{doppelganger.price} / hour" %>
+  <%= "¥#{params[:booking_end] - params[:booking_start]} total" %>
+<% end %>
