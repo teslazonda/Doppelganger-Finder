@@ -4,7 +4,7 @@ class CreateDoppelgangers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :description
       t.references :user, null: false, foreign_key: true
-      t.float :price
+      t.integer :price
 
       t.timestamps
     end
