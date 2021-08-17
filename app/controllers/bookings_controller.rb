@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  # before_action :set_bookings, only: :update
+  # skip_before_action :authenticate_user!, only: :new
+  before_action :set_bookings, only: :update
   def index
     @bookings = policy_scope(Booking)
   end
@@ -7,6 +8,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @doppelganger = Doppelganger.find(params[:doppelganger_id])
+    authorize @booking
   end
 
   def create
@@ -32,6 +34,7 @@ class BookingsController < ApplicationController
 
   def set_bookings
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params
