@@ -1,0 +1,6 @@
+<p><%= simple_form_for [@doppelganger, @booking] do |f| %>
+  <%= f.input :start_time, html5: true %>
+  <%= f.input :end_time, html5: true %>
+  <%= f.input :location %>
+  <%= f.submit 'Request Booking' %>
+<% end %></p>

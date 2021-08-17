@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  # before_action :set_bookings, only: :update
+  # skip_before_action :authenticate_user!, only: :new
+  before_action :set_bookings, only: :update
   def index
     @bookings = policy_scope(Booking)
   end
@@ -7,6 +8,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @doppelganger = Doppelganger.find(params[:doppelganger_id])
+    authorize @booking
   end
 
   def create
@@ -16,9 +18,9 @@ class BookingsController < ApplicationController
     @booking.doppelganger = @doppelganger
     authorize @booking
     if @booking.save
-      redirect_to doppelganger_path(@doppelganger)
+      redirect_to bookings_path
     else
-      render :new
+      render 'doppelgangers/show'
     end
   end
 
@@ -32,9 +34,10 @@ class BookingsController < ApplicationController
 
   def set_bookings
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def booking_params
-    params.require(:booking).permit(:name, :description, :price)
+    params.require(:booking).permit(:start_time, :end_time, :location)
   end
 end
