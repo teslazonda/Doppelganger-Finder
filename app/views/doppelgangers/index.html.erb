@@ -6,9 +6,10 @@
 <% @doppelgangers.each do |doppelganger| %>
   <%= "#{doppelganger.name} located in #{params[:location]}" %>
   <%= doppelganger.description %>
-  <%= "¥#{doppelganger.price} / hour" %>
+  <%#= "¥#{doppelganger.price} / hour" %>
   <%= "¥#{params[:booking_end] - params[:booking_start]} total" %>
   <%= link_to '', doppelganger_path(doppelganger) %>
 <% end %>
+
 
 <%#= @url I was told since we will see this tomorrow I should skip the map for now. %>
