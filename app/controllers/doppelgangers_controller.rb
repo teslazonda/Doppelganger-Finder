@@ -4,7 +4,7 @@ class DoppelgangersController < ApplicationController
 
   def index
     # @doppelgangers = Doppelganger.all
-    @doppelgangers = policy_scope(Doppelgangers).order(created_at: :desc)
+    @doppelgangers = policy_scope(Doppelganger).order(created_at: :desc)
   end
 
   def new
