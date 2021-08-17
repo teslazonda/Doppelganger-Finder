@@ -15,7 +15,7 @@ puts 'Creating new Doppelgangers from Breaking Bad'
 5.times do
   Doppelganger.create!(
     name: Faker::TvShows::BreakingBad.character,
-    description: Faker::Lorem.sentence(word_count: 10),
+    description: Faker::Lorem.sentence(word_count: 4),
     price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
     user_id: @user.id
   )
@@ -26,7 +26,7 @@ puts 'Creating new Doppelgangers from Star Wars'
 5.times do
   Doppelganger.create!(
     name: Faker::Movies::StarWars.character,
-    description: Faker::Movies::StarWars.quote,
+    description: Faker::Lorem.sentence(word_count: 4),
     price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
     user_id: @user.id
   )
@@ -37,7 +37,7 @@ puts 'Creating new Doppelgangers from Harry Potter'
 5.times do
   Doppelganger.create!(
     name: Faker::Movies::HarryPotter.character,
-    description: Faker::Movies::HarryPotter.quote,
+    description: Faker::Lorem.sentence(word_count: 4),
     price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
     user_id: @user.id
   )
@@ -47,7 +47,7 @@ puts 'Harry Potter characters created'
 puts 'Creating a very dear doppelganger to us'
 Doppelganger.create!(
   name: 'Conan O\'Brien',
-  description: 'If life gives you lemons, make some kind of fruity juice.',
+  description: "The best Conan you have seen!",
   price: 100,
   photo_url: "https://avatars.githubusercontent.com/u/25542223?v=4",
   user_id: @user.id
