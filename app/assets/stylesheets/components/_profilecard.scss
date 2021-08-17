@@ -1,0 +1,26 @@
+.card-profile {
+  overflow: hidden;
+  height: 80px;
+  background: $baby-powder;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-profile img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.card-profile h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profile .card-profile-info {
+  padding: 16px;
+}
