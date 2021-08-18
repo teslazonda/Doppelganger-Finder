@@ -2,16 +2,17 @@
 <div>
   <%= "#{params[:name]} in #{params[:location]} | #{params[:booking_start]} TO #{params[:booking_end]}" %>
 </div>
+<div class="main-container">
+<div class="cards">
+  <% @doppelgangers.each do |doppelganger| %>
 
-<% @doppelgangers.each do |doppelganger| %>
+  <%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
 
-<%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
-
-<% end %>
-
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <% end %>
+</div>
+  <div id="map"
+      style="width: 50%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
