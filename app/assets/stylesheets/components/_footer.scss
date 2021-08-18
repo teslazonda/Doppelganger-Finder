@@ -1,9 +1,10 @@
 .footer {
   background: $steel-teal;
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 40px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -15,7 +16,7 @@
   color: $baby-powder;
   opacity: 0.4;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 16px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
@@ -27,4 +28,11 @@
 
 .footer-copyright {
   color: $baby-powder;
+}
+
+// Will make the footer stick to bottom
+body{
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
