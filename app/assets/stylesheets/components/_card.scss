@@ -1,4 +1,5 @@
 .card-product {
+  position: relative;
   overflow: hidden;
   height: 220px;
   background: $baby-powder;
@@ -7,6 +8,12 @@
   align-items: start;
   border-radius: 4px;
   padding: 8px 0 8px 8px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .card-product img {
