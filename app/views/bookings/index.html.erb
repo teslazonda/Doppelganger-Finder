@@ -1,3 +1,14 @@
-<% @bookings.each do |booking| %>
-  <%= booking %>
+<h1>My Requested Bookings</h1>
+
+<% if @bookings.empty? %>
+  <p>No bookings</p>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <p>Booking for: <%= booking.doppelganger %><p>
+    <p>Start time: <%= booking.start_time %><p>
+    <p>End time: <%= booking.end_time %></p>
+    <p>Location: <%= booking.location %></p>
+  <% end %>
 <% end %>
+
+<h1>My Accepted Bookings</h1>
