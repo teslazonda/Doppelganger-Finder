@@ -10,4 +10,8 @@
 <% end %>
 
 
-<%#= @url I was told since we will see this tomorrow I should skip the map for now. %>
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
