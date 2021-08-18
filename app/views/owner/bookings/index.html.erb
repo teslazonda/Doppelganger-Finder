@@ -1,2 +1,12 @@
-<h1>Owner::Bookings#index</h1>
-<p>Find me in app/views/owner/bookings/index.html.erb</p>
+<h1>My Bookings</h1>
+
+<% if @bookings.empty? %>
+  <p>No bookings</p>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <p>You have booked: <%= booking.doppelganger %><p>
+    <p>Start time: <%= booking.start_time %><p>
+    <p>End time: <%= booking.end_time %></p>
+    <p>Location: <%= booking.location %></p>
+  <% end %>
+<% end %>
