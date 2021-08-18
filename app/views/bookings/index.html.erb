@@ -1,13 +1,12 @@
-<h1>Requested Bookings</h1>
-<% if @bookings.empty? %>
-  <p>No bookings</p>
-<% else %>
-  <% @bookings.each do |booking| %>
-    <p>Booking for: <%= booking.doppelganger.name %><p>
-    <p>Start time: <%= booking.start_time %><p>
-    <p>End time: <%= booking.end_time %></p>
-    <p>Location: <%= booking.location %></p>
+<div class="container">
+  <h1>Requested Bookings</h1>
+  <% if @bookings.empty? %>
+    <p>No bookings</p>
+  <% else %>
+  <%= render 'bookings/bookingtable', booking: @booking %>
   <% end %>
-<% end %>
+</div>
 
-<h1>Accepted Bookings</h1>
+<div class="container">
+  <h1>Accepted Bookings</h1>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mb-3">
+  <div class="row">
+  <div class="col-lg-6">
+      <% @bookings.each do |booking| %>
+        <table class="table table-dark">
+        <thead>
+          <tr class="text-center">
+            <th colspan="2">Booking for - <%= booking.doppelganger.name %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Start time:</th>
+            <td> <%= booking.start_time %></td>
+          </tr>
+          <tr>
+            <th scope="row">End time:</th>
+            <td><%= booking.end_time %></td>
+          </tr>
+          <tr>
+            <th scope="row">Location:</th>
+            <td><%= booking.location %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+  </div>
+  </div>
+</div>
