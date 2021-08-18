@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.doppelganger = @doppelganger
     authorize @booking
     if @booking.save
-      redirect_to bookings_path
+      redirect_to owner_bookings_path
     else
       render 'doppelgangers/show'
     end
