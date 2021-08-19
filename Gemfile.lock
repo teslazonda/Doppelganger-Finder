@@ -272,10 +272,7 @@ DEPENDENCIES
   dotenv-rails
   faker!
   font-awesome-sass
-<<<<<<< HEAD
-=======
   geocoder
->>>>>>> 2611bb95dc618eb0051429e81fbcbd91a5143c55
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
