@@ -47,6 +47,7 @@ class DoppelgangersController < ApplicationController
       else
         Doppelganger.search_by_name_and_description(params[:query])
       end
+    @doppelgangers = @doppelgangers.near(params[:city], 10)
   end
 
   def set_doppelganger
