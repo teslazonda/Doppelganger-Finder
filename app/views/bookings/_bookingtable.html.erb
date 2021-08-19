@@ -2,44 +2,22 @@
   <div class="row mx-2">
       <% @bookings.each do |booking| %>
         <div class="col-lg-4 col-md-6">
-            <table class="table booking-table">
-            <thead class="thead-dark">
-              <tr class="text-center">
-              <th colspan="2"><%= image_tag booking.doppelganger.photo, class: 'img-fluid' %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-center">
-                <th colspan="2">Booking for - <%= booking.doppelganger.name.upcase %></th>
-              </tr>
-              <tr>
-                <th scope="row">Start time:</th>
-                <td><%= booking.start_time.strftime("%b %e, %l:%M %p") %></td>
-              </tr>
-              <tr>
-                <th scope="row">End time:</th>
-                <td><%= booking.end_time.strftime("%b %e, %l:%M %p") %></td>
-              </tr>
-              <tr>
-                <th scope="row">Location:</th>
-                <td><%= booking.location %></td>
-              </tr>
-              <tr>
-                <th scope="row">Total price:</th>
-                <td>¥<%= ((booking.end_time - booking.start_time) / 3600 * booking.doppelganger.price).floor.to_s(:delimited) %></td>
-              </tr>
-              <tr>
-                <th scope="row">Status:</th>
-                <% if booking.status == "pending" %>
-                  <td><span class="booking-pending"><%= booking.status.capitalize %></span> | <span class="btn btn-danger">cancel</span></td>
-                <% elsif booking.status == "confirmed" %>
-                  <td><span class="booking-confirmed"><%= booking.status.capitalize %></span></td>
-                <% else %>
-                  <td><span class="booking-rejected"><%= booking.status.capitalize %></span></td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
         </div>
       <% end %>
   </div>
