@@ -22,6 +22,7 @@ class DoppelgangersController < ApplicationController
   def create
     @doppelganger = Doppelganger.new(doppelganger_params)
     authorize @doppelganger
+    @doppelganger.user = current_user
     if @doppelganger.save
       redirect_to doppelganger_path(@doppelganger)
     else
@@ -41,6 +42,6 @@ class DoppelgangersController < ApplicationController
   end
 
   def doppelganger_params
-    params.require(:doppelganger).permit(:name, :description, :price, :photo)
+    params.require(:doppelganger).permit(:name, :description, :price, :address, :photo)
   end
 end
