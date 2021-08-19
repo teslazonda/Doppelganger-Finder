@@ -1,10 +1,12 @@
 .main-container {
   display: flex;
+  justify-content: space-between;
 }
 /* We just give you a Gmaps with random width/height */
 #map {
   position: sticky;
   top: 8px;
+  width: 60%;
 }
 
 .cards {
@@ -14,14 +16,22 @@
 }
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 900px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #map {
+    width: 100%;
+    margin-top: 8px;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (min-width: 901px) {
   .cards {
     grid-template-columns: 1fr;
   }

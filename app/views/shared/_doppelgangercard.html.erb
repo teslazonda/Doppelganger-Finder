@@ -1,17 +1,17 @@
-<div class="container my-3">
+<div class="container my-1">
   <div class="card-product">
   <%= cl_image_tag doppelganger.photo.key, height: 800, width: 800, crop: :fill %>
     <div class="card-product-infos">
       <div class="card-product-title">
       <div>
-        <h3><%= "#{doppelganger.name} near you" %></h3>
-        <h2><%= doppelganger.description %></h2>
+        <h3><%= doppelganger.description %></h3>
+        <h2><%= "#{doppelganger.name}" %></h2>
       </div>
       </div>
       <div class="card-product-price">
       <div>
         <p><%= "¥#{doppelganger.price} / hour" %></p>
-        <p class="total-price">4,000 total</p>
+        <p>¥4,000 total</p>
         <%# Above price is hard coded %>
       </div>
       </div>
