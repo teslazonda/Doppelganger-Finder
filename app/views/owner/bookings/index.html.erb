@@ -2,14 +2,17 @@
   <h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Requested Bookings</h1>
   <% if @bookings.empty? %>
     <p>No bookings</p>
-  <% elsif @bookings.pending %>
+  <% else %>
     <% @bookings.each do |booking| %>
-      <%= render 'bookings/bookingtable', booking: booking %>
-      <%= render 'bookings/accept_form', booking: booking %>
-      <%= render 'bookings/reject_form', booking: booking %>
+      <% if booking.status == 'pending' %>
+        <%= render 'bookings/bookingtable', booking: booking %>
+        <%= render 'bookings/accept_form', booking: booking %>
+        <%= render 'bookings/reject_form', booking: booking %>
+      <% else  %>
+        <%= render 'bookings/bookingtable', booking: booking %>
+      <%# <p class='booking-tag'><%= booking.status %>
+      <% end %>
     <% end %>
-
-
   <% end %>
 
 </div>
