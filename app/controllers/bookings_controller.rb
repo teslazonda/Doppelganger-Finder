@@ -27,8 +27,16 @@ class BookingsController < ApplicationController
   # To be implemented later, don't forget to uncomment the before_action
   # def update
   #   @booking.update(booking_params)
-  #   redirect_to user_path(@user)
+  #   redirect_to owner_bookings_path(@user)
   # end
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to owner_bookings_path
+    else
+      render 'doppelgangers/show'
+    end
+  end
 
   private
 
@@ -38,6 +46,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_time, :end_time, :location)
+    params.require(:booking).permit(:start_time, :end_time, :location, :status)
   end
 end

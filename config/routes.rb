@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index update]
   namespace :owner do
-    resources :bookings, only: [:index]
+    resources :bookings, only: %i[index update]
   end
 end
