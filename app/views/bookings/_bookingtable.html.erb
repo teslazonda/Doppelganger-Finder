@@ -14,13 +14,9 @@
               <li class="list-group-item">Until: <%= booking.end_time.strftime("%b %e, %l:%M %p") %></li>
               <li class="list-group-item">In: <%= booking.location %></li>
               <li class="list-group-item">Total: ¥<%= ((booking.end_time - booking.start_time) / 3600 * booking.doppelganger.price).floor.to_s(:delimited) %></li>
-              <li class="list-group-item">Status: <% if booking.status == "pending" %>
-                  <td><span class="booking-pending"><%= booking.status.capitalize %></span></td>
-                <% elsif booking.status == "confirmed" %>
-                  <td><span class="booking-confirmed"><%= booking.status.capitalize %></span></td>
-                <% else %>
-                  <td><span class="booking-rejected"><%= booking.status.capitalize %></span></td>
-                <% end %></li>
+              <li class="list-group-item">Status:
+                <td><span class="booking-<%= booking.status %>"><%= booking.status.capitalize %></span></td>
+              </li>
             </ul>
           </div>
         </div>
