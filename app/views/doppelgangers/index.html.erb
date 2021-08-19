@@ -1,13 +1,18 @@
 
-<div>
+<%# <div>
   <%= "#{params[:name]} in #{params[:location]} | #{params[:booking_start]} TO #{params[:booking_end]}" %>
+<%# </div> %>
+<div class="main-container">
+<div class="cards">
+  <% @doppelgangers.each do |doppelganger| %>
+
+  <%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
+
+  <% end %>
 </div>
-
-<% @doppelgangers.each do |doppelganger| %>
-
-<%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
-
-<% end %>
-
-
-<%#= @url I was told since we will see this tomorrow I should skip the map for now. %>
+  <div id="map"
+      style="width: 50%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>

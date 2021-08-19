@@ -1,0 +1,44 @@
+<div class="container my-3">
+  <div class="row">
+      <% @bookings.each do |booking| %>
+        <div class="col-lg-4 col-md-8">
+            <table class="table">
+            <thead class="thead-dark">
+              <tr class="text-center">
+              <th colspan="2"><%= image_tag booking.doppelganger.photo_url, class: 'img-fluid',
+                                                                            style: 'vertical-align: middle;',
+                                                                            style: 'width: 250px;',
+                                                                            style: 'height: 300px;',
+                                                                            style: 'object-fit: cover' %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center">
+                <th colspan="2">Booking for - <%= booking.doppelganger.name.upcase %></th>
+              </tr>
+              <tr>
+                <th scope="row">Start time:</th>
+                <td><%= booking.start_time.strftime("%b %e, %l:%M %p") %></td>
+              </tr>
+              <tr>
+                <th scope="row">End time:</th>
+                <td><%= booking.end_time.strftime("%b %e, %l:%M %p") %></td>
+              </tr>
+              <tr>
+                <th scope="row">Location:</th>
+                <td><%= booking.location %></td>
+              </tr>
+              <tr>
+                <th scope="row">Total price:</th>
+                <td>¥<%= ((booking.end_time - booking.start_time) / 3600 * booking.doppelganger.price).floor.to_s(:delimited) %></td>
+              </tr>
+              <tr>
+                <th scope="row">Status:</th>
+                <td><%= booking.status %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      <% end %>
+  </div>
+</div>

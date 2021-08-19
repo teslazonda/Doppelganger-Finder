@@ -1,4 +1,18 @@
-<h1>Doppelgangers#show</h1>
-<p>Don't find me!</p>
-
-<%= render 'bookings/form' %>
+<div class="container d-flex justify-content-between mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-12 col-sm-12 text-center mb-5">
+      <h2><%= @doppelganger.description %></h2>
+        <%= image_tag @doppelganger.photo_url, class: 'img-fluid' %>
+      </div>
+      <div class="col-lg-6 col-md-12 col-12 col-sm-12">
+        <%= render 'bookings/form' %>
+        <ul class="list-group list-group-flush mt-3">
+          <li class="list-group-item">Currently checking<strong> <%= @doppelganger.name %></strong>'s profile</li>
+          <li class="list-group-item">Located: <%= @doppelganger.address %></li>
+          <li class="list-group-item">Hourly rate: ¥<%= @doppelganger.price.to_s(:delimited) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

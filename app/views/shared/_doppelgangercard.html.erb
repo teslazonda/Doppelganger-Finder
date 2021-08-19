@@ -11,9 +11,11 @@
       <div class="card-product-price">
       <div>
         <p><%= "¥#{doppelganger.price} / hour" %></p>
-        <p class="total-price">4,000 total (hard coded)</p>
+        <p class="total-price">4,000 total</p>
+        <%# Above price is hard coded %>
       </div>
       </div>
     </div>
+    <%= link_to '', doppelganger_path(doppelganger), class: 'card-link' %>
   </div>
 </div>
