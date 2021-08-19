@@ -2,6 +2,7 @@ class DoppelgangersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_doppelganger, only: :show
   before_action :doppelganger_index, only: :index
+  before_action :set_user, only: %i[index new show]
 
   def index
     @markers = @doppelgangers.geocoded.map do |doppelganger|
@@ -58,5 +59,9 @@ class DoppelgangersController < ApplicationController
 
   def doppelganger_params
     params.require(:doppelganger).permit(:name, :description, :price, :address, :photo)
+  end
+
+  def set_user
+    @user = current_user
   end
 end

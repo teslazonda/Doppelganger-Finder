@@ -1,6 +1,7 @@
 class Owner::BookingsController < ApplicationController
   def index
     @bookings = policy_scope([:owner, Booking])
+    @user = current_user
   end
 
   def update
@@ -12,10 +13,10 @@ class Owner::BookingsController < ApplicationController
     end
   end
 
-private
+  private
 
-def booking_params
-  # TODO: check your model, might be different than mine
-  params.require(:booking).permit(:status, :start_time, :end_time)
-end
+  def booking_params
+    # TODO: check your model, might be different than mine
+    params.require(:booking).permit(:status, :start_time, :end_time)
+  end
 end
