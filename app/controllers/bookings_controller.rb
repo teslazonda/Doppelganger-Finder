@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :new
   before_action :set_bookings, only: :update
+  before_action :set_user, only: %i[index new]
   def index
     @bookings = policy_scope(Booking)
   end
@@ -47,5 +48,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_time, :end_time, :location, :status)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
