@@ -1,15 +1,19 @@
 
-<%# <div>
-  <%= "#{params[:name]} in #{params[:location]} | #{params[:booking_start]} TO #{params[:booking_end]}" %>
-<%# </div> %>
-<div class="main-container">
-<div class="cards">
-  <% @doppelgangers.each do |doppelganger| %>
-
-  <%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
-
-  <% end %>
+<div>
+  <%= "#{params[:query].blank? ? 'All' : params[:query].capitalize} in #{params[:city].capitalize}" %>
 </div>
+<div class="main-container">
+<% if @doppelgangers.blank? %>
+  <h3>No one matches your search</h3>
+<% else %>
+  <div class="cards">
+    <% @doppelgangers.each do |doppelganger| %>
+
+    <%= render 'shared/doppelgangercard', doppelganger: doppelganger %>
+
+    <% end %>
+  </div>
+<% end %>
   <div id="map"
       style="height: 100vh;"
       data-markers="<%= @markers.to_json %>"
