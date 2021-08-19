@@ -16,10 +16,11 @@
             Discover
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Become a doppelganger</a>
-            <a class="dropdown-item" href="#">Check your bookings</a>
+            <%= link_to "Become a Doppelganger", "/doppelgangers/new", class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Booking requests</a>
+            <%= link_to "Check your bookings", "/owner/bookings", class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Booking requests", "/bookings", class: "dropdown-item" %>
           </div>
         </li>
         <li class="nav-item">
