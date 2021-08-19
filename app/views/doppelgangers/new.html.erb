@@ -1,10 +1,15 @@
-<h1>Become a Doppelganger!</h1>
-
-<%= simple_form_for @doppelganger do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :address %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit 'Create Doppelganger', class: 'gradient-button-md' %>
-<% end %>
+<h1 class="text-center my-3">Become a Doppelganger!</h1>
+<div class="container w-1000 d-flex justify-content-center align-items-center">
+  <div class="row">
+    <div class="col dop-form">
+      <%= simple_form_for @doppelganger do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :address %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit 'Create Doppelganger', class: 'gradient-button-md' %>
+      <% end %>
+    </div>
+  </div>
+</div>
