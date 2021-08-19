@@ -1,44 +1,30 @@
-<div class="container my-3">
-  <div class="row">
+<div class="py-3">
+  <div class="card-deck">
+    <div class="row mx-2">
       <% @bookings.each do |booking| %>
-        <div class="col-lg-4 col-md-8">
-            <table class="table">
-            <thead class="thead-dark">
-              <tr class="text-center">
-              <th colspan="2"><%= image_tag booking.doppelganger.photo, class: 'img-fluid',
-                                                                            style: 'vertical-align: middle;',
-                                                                            style: 'width: 250px;',
-                                                                            style: 'height: 300px;',
-                                                                            style: 'object-fit: cover' %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-center">
-                <th colspan="2">Booking for - <%= booking.doppelganger.name.upcase %></th>
-              </tr>
-              <tr>
-                <th scope="row">Start time:</th>
-                <td><%= booking.start_time.strftime("%b %e, %l:%M %p") %></td>
-              </tr>
-              <tr>
-                <th scope="row">End time:</th>
-                <td><%= booking.end_time.strftime("%b %e, %l:%M %p") %></td>
-              </tr>
-              <tr>
-                <th scope="row">Location:</th>
-                <td><%= booking.location %></td>
-              </tr>
-              <tr>
-                <th scope="row">Total price:</th>
-                <td>¥<%= ((booking.end_time - booking.start_time) / 3600 * booking.doppelganger.price).floor.to_s(:delimited) %></td>
-              </tr>
-              <tr>
-                <th scope="row">Status:</th>
-                <td><%= booking.status %></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="col-lg-4 col-md-6 mb-3">
+        <div class="card">
+          <%= image_tag booking.doppelganger.photo, class: 'card-img-top' %>
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.doppelganger.name %></h5>
+            <p class="card-text"><%= booking.doppelganger.description %></p>
+          </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">From: <%= booking.start_time.strftime("%b %e, %l:%M %p") %></li>
+              <li class="list-group-item">Until: <%= booking.end_time.strftime("%b %e, %l:%M %p") %></li>
+              <li class="list-group-item">In: <%= booking.location %></li>
+              <li class="list-group-item">Total: ¥<%= ((booking.end_time - booking.start_time) / 3600 * booking.doppelganger.price).floor.to_s(:delimited) %></li>
+              <li class="list-group-item">Status: <% if booking.status == "pending" %>
+                  <td><span class="booking-pending"><%= booking.status.capitalize %></span></td>
+                <% elsif booking.status == "confirmed" %>
+                  <td><span class="booking-confirmed"><%= booking.status.capitalize %></span></td>
+                <% else %>
+                  <td><span class="booking-rejected"><%= booking.status.capitalize %></span></td>
+                <% end %></li>
+            </ul>
+          </div>
         </div>
       <% end %>
+    </div>
   </div>
 </div>

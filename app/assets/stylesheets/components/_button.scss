@@ -78,3 +78,22 @@
     background-position: 100%;
     }
 }
+// For booking status
+.booking-pending {
+  background-color: $rich-grey;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+}
+.booking-confirmed {
+  background-color: $steel-teal;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+}
+.booking-rejected {
+  background-color: $rose-madder;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+}
