@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_030128) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "location"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "doppelganger_id", null: false
     t.bigint "user_id", null: false
     t.text "instructions"

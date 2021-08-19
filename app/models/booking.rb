@@ -4,5 +4,6 @@ class Booking < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   validates :location, presence: true
+  validates :status, presence: true
   enum status: %i[pending rejected accepted]
 end
