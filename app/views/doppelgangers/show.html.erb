@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-lg-6 col-md-12 col-12 col-sm-12 text-center mb-5">
       <h2><%= @doppelganger.description %></h2>
-        <%= image_tag @doppelganger.photo_url, class: 'img-fluid' %>
+        <%# <%= image_tag @doppelganger.photo_url, class: 'img-fluid' %>
+        <%= cl_image_path @doppelganger.photo.key, class: 'img-fluid' %>
       </div>
       <div class="col-lg-6 col-md-12 col-12 col-sm-12">
         <%= render 'bookings/form' %>
