@@ -6,4 +6,8 @@ class Booking < ApplicationRecord
   validates :location, presence: true
   validates :status, presence: true
   enum status: %i[pending rejected accepted]
+
+  def pending?
+    status == 'pending'
+  end
 end
