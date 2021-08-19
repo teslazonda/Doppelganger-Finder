@@ -8,41 +8,40 @@ puts 'DB is clean'
 
 puts 'Creating a user'
 
-@users = (
-User.create!(
+@users = []
+@users << User.create!(
   first_name: "Christopher",
   last_name: "Columbus",
   email: "columbus@email.com",
   password: "123456"
 )
 
-User.create!(
+@users << User.create!(
   first_name: "Frank",
   last_name: "Columbo",
   email: "columbo@email.com",
   password: "123456"
 )
 
-User.create!(
+@users << User.create!(
   first_name: "Pikachu",
   last_name: "Pokemon",
   email: "pikachu@email.com",
   password: "123456"
 )
 
-User.create!(
+@users << User.create!(
   first_name: "Kakarot",
   last_name: "Goku",
   email: "kakarot@email.com",
   password: "123456"
 )
 
-User.create!(
+@users << User.create!(
   first_name: "Jean-Claude",
   last_name: "Van Damme",
   email: "jean-claude@email.com",
   password: "123456"
-)
 )
 
 puts 'User created'
@@ -55,7 +54,7 @@ dop1 = Doppelganger.new(
   name: "Harry Potter",
   description: "I even have a scar on my forehead!",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 dop1.photo.attach(io: file, filename: 'Harry-Potter.jpg', content_type: 'image/png')
 dop1.save! if dop1.photo.attached?
@@ -68,7 +67,7 @@ dop2 = Doppelganger.new(
   name: "Hermione Granger",
   description: "It's LeviOHsa, not LeviohSA",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop2.photo.attach(io: file, filename: 'Hermione-Granger.jpg', content_type: 'image/png')
@@ -82,7 +81,7 @@ dop3 = Doppelganger.new(
   name: "Walter White",
   description: "I am the one who knocks!",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop3.photo.attach(io: file, filename: 'Walter-White.jpg', content_type: 'image/png')
@@ -96,7 +95,7 @@ dop4 = Doppelganger.new(
   name: "Conan O\'Brien",
   description: "Just the best!",
   price: 100,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop4.photo.attach(io: file, filename: 'Doug.jpg', content_type: 'image/png')
@@ -104,13 +103,13 @@ dop4.save! if dop4.photo.attached?
 
 # Seeding fifth doppelganger
 
-file = URI.open("https://imgur.com/g3n8D8A")
+file = URI.open("https://i.imgur.com/g3n8D8A.jpg")
 dop5 = Doppelganger.new(
   address: 'Sunshine City',
   name: "Johnny Bravo",
   description: "Want to see me comb my hair really fast?",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop5.photo.attach(io: file, filename: 'bravo.jpg', content_type: 'image/png')
@@ -124,7 +123,7 @@ dop6 = Doppelganger.new(
   name: "John McClane",
   description: "Yippee Ki Yay!",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop6.photo.attach(io: file, filename: 'mcclane.jpg', content_type: 'image/png')
@@ -138,7 +137,7 @@ dop7 = Doppelganger.new(
   name: "Vin Diesel",
   description: "I live my life a quarter mile at a time",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop7.photo.attach(io: file, filename: 'diesel.jpg', content_type: 'image/png')
@@ -146,13 +145,13 @@ dop7.save! if dop7.photo.attached?
 
 # Seeding eight doppelganger
 
-file = URI.open("https://imgur.com/TWOnVJK")
+file = URI.open("https://i.imgur.com/TWOnVJK.jpg")
 dop8 = Doppelganger.new(
   address: 'Tokyo station',
   name: "Barack Obama",
   description: "Thanks Obama!",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop8.photo.attach(io: file, filename: 'obama.jpg', content_type: 'image/png')
@@ -166,7 +165,7 @@ dop9 = Doppelganger.new(
   name: "Austin Powers",
   description: "Groovy baby, yeah!",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop9.photo.attach(io: file, filename: 'powers.jpg', content_type: 'image/png')
@@ -180,7 +179,7 @@ dop10 = Doppelganger.new(
   name: "Ghandi",
   description: "Be the change you want to see in the world.",
   price: [1000, 1500, 2000, 2500, 3000, 3500, 4000].sample,
-  user_id: @users.sample
+  user_id: @users.sample.id
 )
 
 dop10.photo.attach(io: file, filename: 'ghandi.jpg', content_type: 'image/png')
