@@ -1,9 +1,9 @@
 class DoppelgangersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_doppelganger, only: :show
+  before_action :doppelganger_index, only: :index
 
   def index
-    @doppelgangers = Doppelganger.all
     @markers = @doppelgangers.geocoded.map do |doppelganger|
       {
         lat: doppelganger.latitude,
@@ -11,7 +11,8 @@ class DoppelgangersController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { doppelganger: doppelganger })
       }
     end
-    @doppelgangers = policy_scope(Doppelganger).order(created_at: :desc)
+    @doppelgangers = policy_scope(doppelganger_index).order(created_at: :desc)
+    # @name = search_name
   end
 
   def new
@@ -35,6 +36,20 @@ class DoppelgangersController < ApplicationController
   end
 
   private
+
+  # def search_name
+  #   'all' if params[:query].blank?
+  # end
+
+  def doppelganger_index
+    @doppelgangers =
+      if params[:query].blank?
+        Doppelganger.all
+      else
+        Doppelganger.search_by_name_and_description(params[:query])
+      end
+    @doppelgangers = @doppelgangers.near(params[:city], 10)
+  end
 
   def set_doppelganger
     @doppelganger = Doppelganger.find(params[:id])
