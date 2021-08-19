@@ -17,10 +17,11 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to "Become a Doppelganger", "/doppelgangers/new", class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Check your bookings", "/owner/bookings", class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Booking requests", "/bookings", class: "dropdown-item" %>
+            <%= link_to "Check your bookings", "/bookings", class: "dropdown-item" %>
+            <% if @user.doppelgangers.any? %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Booking requests", "/owner/bookings", class: "dropdown-item" %>
+            <% end %>
           </div>
         </li>
         <li class="nav-item">
