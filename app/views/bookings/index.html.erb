@@ -1,16 +1,8 @@
-<div class="container">
-  <h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Requested Bookings</h1>
+  <h1 class="text-center py-3 bg-gradient-primary text-white">Requested Bookings</h1>
   <% if @bookings.empty? %>
     <p>No bookings</p>
   <% else %>
   <%= render 'bookings/bookingtable', booking: @booking %>
   <% end %>
-</div>
-
-<div class="container">
-  <h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Accepted Bookings</h1>
-</div>
-
-<div class="container">
-  <h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Refused Bookings</h1>
-</div>
+<h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Accepted Bookings</h1>
+<h1 class="text-center my-4 py-3 bg-gradient-primary text-white">Refused Bookings</h1>
