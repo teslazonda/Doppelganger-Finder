@@ -6,28 +6,28 @@
         <div class="form-row align-items-center">
           <div class="col-auto">
             <label class="sr-only" for="inlineFormInput">Name</label>
-            <input type="text" class="form-control mb-2" id="inlineFormInput" name="name" placeholder="Celebrity name">
-          </div>
-          <div class="col-auto">
-            <label class="sr-only" for="inlineFormInputGroup">Booking start</label>
-            <div class="input-group mb-2" style="width: 90px;">
-              <input type="text" class="form-control" id="inlineFormInputGroup" name="booking_start" placeholder="Start">
-            </div>
-          </div>
-          <div class="col-auto">
-            <label class="sr-only" for="inlineFormInputGroup">Booking end</label>
-            <div class="input-group mb-2" style="width: 90px;">
-              <input type="text" class="form-control" id="inlineFormInputGroup" name="booking_end" placeholder="End">
+            <div class="input-group mb-2">
+              <%= form_tag doppelgangers_path, method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Celebrity name"
+                %>
             </div>
           </div>
           <div class="col-auto">
             <label class="sr-only" for="inlineFormInputGroup">Location</label>
             <div class="input-group mb-2">
-              <input type="text" class="form-control" id="inlineFormInputGroup" name="location" placeholder="Location">
+              <%= text_field_tag :city,
+                params[:city],
+                class: "form-control",
+                placeholder: "City"
+              %>
             </div>
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
           </div>
         </div>
       </form>
