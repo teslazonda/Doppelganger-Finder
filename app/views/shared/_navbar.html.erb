@@ -11,8 +11,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Profile", "#", class: "nav-link" %>
+        <li class="nav-item dropdown mr-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Discover
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Become a doppelganger</a>
+            <a class="dropdown-item" href="#">Check your bookings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Booking requests</a>
+          </div>
         </li>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
