@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 <div class="container mt-5">
   <div class="row">
-    <% @doppelgangers.first(4).each do |doppelganger| %>
+    <% @doppelgangers.sample(4).each do |doppelganger| %>
       <div class="col">
         <div class="container my-3">
           <div class="card-product">
