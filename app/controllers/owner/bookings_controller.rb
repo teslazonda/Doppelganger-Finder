@@ -6,6 +6,7 @@ class Owner::BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     if @booking.update(booking_params)
       render 'owner/bookings'
     else
