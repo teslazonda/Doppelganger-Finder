@@ -15,7 +15,9 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    # record.user == user
+    # record.user == @doppelganger.user
+    record.doppelganger.user == user
   end
 
   def destroy?

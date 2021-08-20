@@ -5,8 +5,7 @@
     <% @bookings.each do |booking| %>
       <% if booking.status == 'pending' %>
         <%= render 'bookings/bookingtable', booking: booking %>
-        <%= render 'bookings/accept_form', booking: booking %>
-        <%= render 'bookings/reject_form', booking: booking %>
+
       <% else  %>
         <%= render 'bookings/bookingtable', booking: booking %>
       <%# <p class='booking-tag'><%= booking.status %>
