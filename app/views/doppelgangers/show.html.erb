@@ -15,7 +15,7 @@
           <li class="list-group-item">Currently checking<strong> <%= @doppelganger.name %></strong>'s profile</li>
           <li class="list-group-item">Located: <%= @doppelganger.address %></li>
           <li class="list-group-item">Hourly rate: ¥<%= @doppelganger.price.to_s(:delimited) %></li>
-        <%= render 'bookings/owner_doppelganger_card' if @doppelganger.user = current_user %>
+        <%= render 'bookings/owner_doppelganger_card' if @doppelganger.user == current_user %>
         </ul>
       </div>
     </div>
