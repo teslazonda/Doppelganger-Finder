@@ -1,21 +1,12 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 80vh;
 }
 .banner-content {
   padding: 200px 0 0 0;
 }
 
-.banner h1 {
-  margin: 0;
-  padding-bottom: 24px;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-}
 .banner h2 {
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -50,19 +41,21 @@
 	font-size: 40px;
 	font-weight: 900;
 	background-color: rgba(0, 0, 0, 0);
-	color: #fff;
+	color: $rose-madder;
 	display: block;
 	padding: .5em;
+  text-shadow: 1px 1px 10px $rich-grey;
 }
 
 .text-box h1:nth-child(2) {
 	position: absolute;
 	background-color: rgba(255, 255, 255, 0);
-	color: #000;
+	color: $orange-peel;
+  text-shadow: 1px 1px 10px $steel-teal;
 	clip-path: inset(-1% -1% 50% -1%); // Added the negative values to prevent icky "bleed" in Chrome
 }
 @media only screen and (max-width: 770px){
     .text-box h1 {
-      font-size: 32px;
+      font-size: 36px;
     }
 }
