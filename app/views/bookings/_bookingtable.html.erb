@@ -2,9 +2,9 @@
   <div class="card-deck">
     <div class="row mx-2">
       <% @bookings.each do |booking| %>
-      <div class="col-lg-4 col-md-6 mb-3">
-        <div class="card">
-          <%= image_tag booking.doppelganger.photo, class: 'card-img-top' %>
+      <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <div class="card" style="width: 400px;">
+          <%= cl_image_tag booking.doppelganger.photo.key, width: 400, height: 400, crop: :fit, class: 'card-img-top' %>
           <div class="card-body">
             <h5 class="card-title"><%= booking.doppelganger.name %></h5>
             <p class="card-text"><%= booking.doppelganger.description %></p>

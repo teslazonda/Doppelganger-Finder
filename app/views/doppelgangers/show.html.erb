@@ -5,7 +5,7 @@
       <h2><%= @doppelganger.description %></h2>
 
         <% if @doppelganger.photo.attached? %>
-          <%= cl_image_tag @doppelganger.photo.key, class: 'img-fluid' %>
+          <%= cl_image_tag @doppelganger.photo.key, height: 800, width: 800, class: 'img-fluid' %>
         <% end %>
 
       </div>
