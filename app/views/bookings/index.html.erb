@@ -1,6 +1,6 @@
 <h1 class="text-center py-3 bg-gradient-primary text-white">Bookings you have made</h1>
 <% if @bookings.empty? %>
-  <p>No bookings</p>
+  <h2 class="text-center mt-3">You have not made any bookings yet!</h1>
 <% else %>
 <%= render 'bookings/bookingtable', booking: @booking %>
 <% end %>
