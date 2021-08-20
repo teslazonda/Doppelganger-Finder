@@ -26,6 +26,10 @@
                   Booking requests <i class="fas fa-bell-slash"></i>
                 <% end %>
               <% end %>
+              <% @user.doppelgangers.each do |doppelganger| %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "#{doppelganger.name}", "/doppelgangers/#{doppelganger.id}", class: "dropdown-item" %>
+              <% end %>
             <% end %>
           </div>
         </li>
