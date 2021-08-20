@@ -4,3 +4,14 @@
   right: 16px;
   z-index: 1000;
 }
+.green-pill {
+  position: absolute;
+  font-size: 24px;
+  color: $steel-teal;
+}
+.booking-pill {
+  position: relative;
+  color: rgb(255, 255, 255);
+  top: 0px;
+  right: -8px;
+}

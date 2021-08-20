@@ -19,7 +19,13 @@
             <%= link_to "Check your bookings", "/bookings", class: "dropdown-item" %>
             <% if @user.doppelgangers.any? %>
               <div class="dropdown-divider"></div>
-              <%= link_to "Booking requests", "/owner/bookings", class: "dropdown-item" %>
+              <%= link_to "" "/owner/bookings", class: "dropdown-item" do %>
+                <% if @user.bookings_as_owner.where(status:"pending").any? %>
+                  Booking requests <i class="fas fa-circle green-pill"></i><span class="booking-pill"><%= @user.bookings_as_owner.where(status:"pending").count %></span>
+                <% else %>
+                  Booking requests <i class="fas fa-bell-slash"></i>
+                <% end %>
+              <% end %>
             <% end %>
           </div>
         </li>
