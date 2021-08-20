@@ -1,7 +1,7 @@
 <div class="py-3">
   <div class="card-deck">
     <div class="row mx-2">
-
+      <% @bookings.each do |booking| %>
       <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
         <div class="card" style="width: 400px;">
           <%= cl_image_tag booking.doppelganger.photo.key, width: 400, height: 400, crop: :fit, class: 'card-img-top' %>
@@ -19,7 +19,7 @@
               </li>
               <li class="list-group-item d-flex justify-content-around mb-3">
 
-                  <% if booking.status == 'pending' %>
+                  <% if booking.status == 'pending' && booking.doppelganger.user == current_user %>
                     <%= render 'bookings/accept_form', booking: booking%>
                     <%= render 'bookings/reject_form', booking: booking %>
                   <% end %>
@@ -28,7 +28,7 @@
             </ul>
           </div>
         </div>
-
+      <% end %>
     </div>
   </div>
 </div>
