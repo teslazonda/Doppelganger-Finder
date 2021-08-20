@@ -11,12 +11,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown mr-4">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Discover
+            <i class="fas fa-book" style="font-size:24px;"></i>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Become a Doppelganger", "/doppelgangers/new", class: "dropdown-item" %>
             <%= link_to "Check your bookings", "/bookings", class: "dropdown-item" %>
             <% if @user.doppelgangers.any? %>
               <div class="dropdown-divider"></div>
@@ -24,9 +23,12 @@
             <% end %>
           </div>
         </li>
+      <li class="nav-item mt-1">
+        <%= link_to "Become a Doppelganger", "/doppelgangers/new", class: "dropdown-item" %>
+      </li>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-            <i class="fas fa-power-off"></i> log-out
+            <i class="fas fa-power-off" style="font-size:24px;"></i>
           <% end %>
         </li>
       <% else %>
