@@ -1,5 +1,6 @@
-<div class="col-lg-6 col-md-12 col-12 col-sm-12">
+<div class="col-lg-10 col-md-12 col-12 col-sm-12">
   <ul class="list-group list-group-flush mt-3">
-    <li class="list-group-item">Here is your doppelganger</li>
-    <li class="list-group-item"><%= link_to 'Your bookings', '/owner/bookings', class: 'btn btn-primary mb-2' %></li>
+    <li class="list-group-item">This is your <strong><%= @doppelganger.name.capitalize %></strong> doppelganger</li>
+    <li class="list-group-item"><strong>Created:</strong> <%= @doppelganger.created_at.strftime("%b %e, %l:%M %p") %></li>
+    <li class="list-group-item text-center"><%= link_to 'Check your bookings', '/owner/bookings', class: 'btn btn-primary mb-2' %></li>
 </div>
