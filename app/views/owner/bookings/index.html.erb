@@ -1,14 +1,14 @@
-  <h1 class="text-center py-3 bg-gradient-primary text-white">Bookings people are requesting</h1>
-  <% if @bookings.empty? %>
-    <h2 class="text-center my-5">No bookings yet 😢</h2>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <% if booking.status == 'pending' %>
-        <%= render 'bookings/bookingtable', booking: booking %>
+<h1>My Requested Bookings</h1>
 
-      <% else  %>
-        <%= render 'bookings/bookingtable', booking: booking %>
-      <%# <p class='booking-tag'><%= booking.status %>
-      <% end %>
-    <% end %>
+<% if @bookings.empty? %>
+  <p>No bookings</p>
+<% else %>
+  <% @bookings.each do |booking| %>
+    <p>Booking for: <%= booking.doppelganger %><p>
+    <p>Start time: <%= booking.start_time %><p>
+    <p>End time: <%= booking.end_time %></p>
+    <p>Location: <%= booking.location %></p>
   <% end %>
+<% end %>
+
+<h1>My Accepted Bookings</h1>
