@@ -5,6 +5,9 @@
       <div class="col">
         <div class="container my-3">
           <div class="card-product">
+            <div>
+               <%= link_to '', doppelganger_path(doppelganger), class: 'card-link' %>
+            </div>
           <%= cl_image_tag doppelganger.photo.key, height: 800, width: 800, crop: :fill  %>
             <div class="card-product-infos">
               <div class="card-product-title">
