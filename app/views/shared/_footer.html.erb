@@ -1,10 +1,19 @@
 <div class="footer">
   <div class="footer-links">
-    <a href="https://github.com/teslazonda/Doppelganger-Finder" class="mr-2"><i class="fab fa-github text-white"></i> Open repository</a>
-    <a href="https://github.com/teslazonda" class="mr-2"><i class="fab fa-github"></i> Quill</a>
-    <a href="https://github.com/Sae-S" class="mr-2"><i class="fab fa-github"></i> Sae</a>
-    <a href="https://github.com/neoke20" class="mr-2"><i class="fab fa-github"></i> Kevin</a>
-    <a href="https://github.com/Tokyo-Viddy"><i class="fab fa-github"></i> Viddy</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fab fa-github" style="font-size:24px;"></i>
+      </a>
+      <div class="dropdown-menu footer-colour" aria-labelledby="navbarDropdown">
+        <%= link_to "Open repository", "https://github.com/teslazonda/Doppelganger-Finder", class: "dropdown-item footer-colour" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Quill", "https://github.com/teslazonda", class: "dropdown-item footer-colour" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Sae", "https://github.com/Sae-S", class: "dropdown-item footer-colour" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Kevin", "https://github.com/neoke20", class: "dropdown-item footer-colour" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Viddy", "https://github.com/Tokyo-Viddy", class: "dropdown-item footer-colour" %>
+      </div>
   </div>
   <div class="footer-copyright">
     This site was made at Le Wagon Tokyo
