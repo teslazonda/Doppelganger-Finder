@@ -2,9 +2,13 @@
   <div class="container banner-content">
   <div class="container d-flex inline-form">
     <div class="banner-form">
+    <div class="text-box">
+		<h1>DOPPELGANGER FINDER</h1>
+		<h1>DOPPELGANGER FINDER</h1>
+    </div>
       <form action="/doppelgangers">
         <div class="form-row align-items-center">
-          <div class="col-auto">
+          <div class="col-sm-12 col-md-5 col-lg-5">
             <label class="sr-only" for="inlineFormInput">Name</label>
             <div class="input-group mb-2">
               <%= form_tag doppelgangers_path, method: :get do %>
@@ -15,7 +19,7 @@
                 %>
             </div>
           </div>
-          <div class="col-auto">
+          <div class="col-lg-auto col-md-auto col-sm-9 col-9">
             <label class="sr-only" for="inlineFormInputGroup">Location</label>
             <div class="input-group mb-2">
               <%= text_field_tag :city,
@@ -32,7 +36,7 @@
         </div>
       </form>
     </div>
-      <h1 class="mt-4">FIND THE BEST DOPPELGANGERS IN TOWN!</h1>
+      <h2 class="mt-4">FIND THE BEST DOPPELGANGERS IN TOWN!</h2>
       <p>Is that who I think it is?</p>
     </div>
   </div>
