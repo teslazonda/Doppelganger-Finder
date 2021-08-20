@@ -5,7 +5,7 @@
       <%= simple_form_for @doppelganger do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :price %>
+        <%= f.input :price, label: 'Hourly rate' %>
         <%= f.input :address %>
         <%= f.input :photo, as: :file %>
         <%= f.submit 'Create Doppelganger', class: 'gradient-button-md' %>
