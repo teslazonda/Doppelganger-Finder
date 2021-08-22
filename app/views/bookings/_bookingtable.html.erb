@@ -4,7 +4,7 @@
       <% @bookings.each do |booking| %>
       <div class="cards my-2">
         <div class="card" style="width: 300px;">
-          <%= cl_image_tag booking.doppelganger.photo.key, width: 400, height: 400, crop: :fit, class: 'card-img-top' %>
+          <%= cl_image_tag booking.doppelganger.photo.key, crop: :fit, class: 'card-img-top p-1' %>
           <div class="card-body">
             <h5 class="card-title"><%= booking.doppelganger.name %></h5>
             <p class="card-text"><%= booking.doppelganger.description %></p>

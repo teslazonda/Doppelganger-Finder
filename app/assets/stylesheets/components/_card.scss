@@ -12,7 +12,8 @@
 .card-img-top {
   height: 400px;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  background-color: $rich-grey;
 }
 .card-link {
   position: absolute;
