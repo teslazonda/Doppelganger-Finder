@@ -17,7 +17,6 @@
               <li class="list-group-item">Status:
                 <td><span class="booking-<%= booking.status %>"><%= booking.status.capitalize %></span></td>
               </li>
-              <li class="list-group-item d-flex justify-content-around mb-3">
 
                   <% if booking.status == 'pending' && booking.doppelganger.user == current_user %>
                     <%= render 'bookings/accept_form', booking: booking%>
