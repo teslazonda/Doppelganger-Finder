@@ -9,6 +9,17 @@
   border-radius: 4px;
   padding: 8px 0 8px 8px;
 }
+// Will make the image fill the entire div it's in without stretching
+.card-img-top {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  background-color: $rich-grey;
+}
+.card-body {
+  background-color: $rich-grey;
+  color: $baby-powder;
+}
 .card-link {
   position: absolute;
   top: 0;
