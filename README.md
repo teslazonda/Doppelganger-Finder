@@ -6,7 +6,7 @@ If you're looking to make some extra cash, then sign up to become a doppelgänge
 
 To create your own Doppelgänger site, first clone the repository, then run ```bundle install``` and ```yarn install``` in the repo.
 
-##Technologies:
+### Technologies:
 
   Ruby on Rails
   CSS
